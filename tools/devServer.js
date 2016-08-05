@@ -1,10 +1,22 @@
 import express from 'express';
+import path from 'path';
+import webpack from 'webpack';
+import webpackConfig from '../webpack.config.dev.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.status(200).json('***logiXbomb***');
+const compiler = webpack(webpackConfig);
+
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: webpackConfig.output.publicPath
+}));
+
+app.use(require('webpack-hot-middleware')(compiler));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
 app.listen(PORT, () => {
