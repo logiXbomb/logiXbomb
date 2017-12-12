@@ -5,7 +5,8 @@
     "name": "logixbomb-ingress",
     "annotations": {
       "kubernetes.io/ingress.global-static-ip-name": "kubernetes-ingress",
-      "kubernetes.io/ingress.allow-http": "true"
+      "kubernetes.io/ingress.allow-http": "true",
+      "ingress.kubernetes.io/ssl-redirect": "true"
     }
   },
   "spec": {
