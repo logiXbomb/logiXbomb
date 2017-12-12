@@ -10,20 +10,22 @@
     }
   },
   "spec": {
-    "rules": {
-      "host": "www.logixbomb.com",
-      "http": {
-        "paths": [
-          {
-            "backend": {
-              "serviceName": "testitout",
-              "servicePort": 80
-            },
-            "path": "/*"
-          }
-        ]
+    "rules": [
+      {
+        "host": "www.logixbomb.com",
+        "http": {
+          "paths": [
+            {
+              "backend": {
+                "serviceName": "testitout",
+                "servicePort": 80
+              },
+              "path": "/*"
+            }
+          ]
+        }
       }
-    },
+    ],
     "backend": {
       "serviceName": "testitout",
       "servicePort": 80
