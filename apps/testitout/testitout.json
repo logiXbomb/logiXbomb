@@ -27,7 +27,7 @@
               "-c",
               "/./main"
             ],
-            "imagePullPolicy": "Always",
+            "imagePullPolicy": "Never",
             "readinessProbe": {
               "httpGet": {
                 "path": "/",
