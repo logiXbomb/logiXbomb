@@ -1,0 +1,17 @@
+{
+  "apiVersion": "extensions/v1beta1",
+  "kind": "Ingress",
+  "metadata": {
+    "name": "logiXbomb-ingress",
+    "annotations": {
+      "kubernetes.io/ingress.global-static-ip-name": "kubernetes-ingress",
+      "kubernetes.io/ingress.allow-http": "true"
+    }
+  },
+  "spec": {
+    "backend": {
+      "serviceName": "testitout",
+      "servicePort": 80
+    }
+  }
+}
