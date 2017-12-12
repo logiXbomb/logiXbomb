@@ -1,0 +1,45 @@
+{
+  "apiVersion": "extensions/v1beta1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "testitout"
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "testitout"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "testitout",
+            "ports": [
+              {
+                "containerPort": 80
+              }
+            ],
+            "image": "test",
+            "command": [
+              "/bin/sh",
+              "-c",
+              "/./main"
+            ],
+            "imagePullPolicy": "Always",
+            "readinessProbe": {
+              "httpGet": {
+                "path": "/",
+                "port": 80
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 30,
+              "timeoutSeconds": 10
+            }
+          }
+        ]
+      }
+    }
+  }
+}
