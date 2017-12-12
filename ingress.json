@@ -5,8 +5,7 @@
     "name": "logixbomb-ingress",
     "annotations": {
       "kubernetes.io/ingress.global-static-ip-name": "kubernetes-ingress",
-      "kubernetes.io/ingress.allow-http": "true",
-      "ingress.kubernetes.io/ssl-redirect": "false"
+      "kubernetes.io/ingress.allow-http": "true"
     }
   },
   "spec": {
@@ -25,10 +24,6 @@
           ]
         }
       }
-    ],
-    "backend": {
-      "serviceName": "testitout",
-      "servicePort": 80
-    }
+    ]
   }
 }
