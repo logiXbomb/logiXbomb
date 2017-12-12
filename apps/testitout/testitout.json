@@ -21,7 +21,7 @@
                 "containerPort": 80
               }
             ],
-            "image": "test",
+            "image": "test:latest",
             "command": [
               "/bin/sh",
               "-c",
